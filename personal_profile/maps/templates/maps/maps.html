@@ -10,7 +10,6 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin - Free Bulma template</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
@@ -170,7 +169,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item brand-text" href="../index.html">
-          Bulma Admin
+          	Admin
         </a>
                 <div class="navbar-burger burger" data-target="navMenu">
                     <span></span>
@@ -197,6 +196,28 @@
           </a>
                 </div>
 
+            </div>
+            <div class="navbar-end">
+            	<div class="navbar-item has-dropdown is-hoverable">
+            		<a class="navbar-link">
+            		Account
+            		</a>
+            		<div class="navbar-dropdown">
+            			<a class="navbar-item">
+            			Dashboard
+            			</a>
+            			<a class="navbar-item">
+            			Profile
+            			</a>
+            			<a class="navbar-item">
+            			Settings
+            			</a>
+            			<hr class="navbar-divider">
+            			<a class="navbar-item">
+            			Logout
+            			</a>
+            		</div>
+            	</div>
             </div>
         </div>
     </nav>
@@ -245,19 +266,34 @@
                 </aside>
             </div>
 
-             <section>
-             <h1> Maps </h1>
 
-			<div id='map' style='width: 400px; height: 300px; '></div>
-			<script>
-			  mapboxgl.accessToken = 'pk.eyJ1IjoiandpbGV5MSIsImEiOiJjazJlMGYzcTgwNGdjM21sNm9ncDV0M3Y4In0.uO-pnUNGexNRXHQqAtw-XA';
-  			var map = new mapboxgl.Map({
-    			container: 'map',
-    			style: 'mapbox://styles/mapbox/navigation-guidance-night-v4'
-  			});
-			</script>
-		</section>
+            <section>
+            	<div class="tile is-ancestor">
+            		<div class="tile is-vertical is-9">
+            			<div class="tile">
+            				<div class="tile is-parent is-vertical">
+            					<article class="tile is-child is-primary">
 
+            						<section class="section mr-2">
+            							<h1 style='padding-top: 30px; margin-top: 30px'> Maps </h1>
+
+										<div id='map' style='width: 400px; height: 300px; padding-top: 30px; margin-top: 30px'></div>
+										<script>
+			 							 mapboxgl.accessToken = 'pk.eyJ1IjoiandpbGV5MSIsImEiOiJjazJlMGYzcTgwNGdjM21sNm9ncDV0M3Y4In0.uO-pnUNGexNRXHQqAtw-XA';
+  										var map = new mapboxgl.Map({
+    										container: 'map',
+    										style: 'mapbox://styles/mapbox/navigation-guidance-night-v4'
+  										});
+										</script>
+									</section>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
 	</body>
 </html>
 		<!--
