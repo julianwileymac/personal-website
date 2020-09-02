@@ -1,0 +1,176 @@
+<html>
+
+{% load static %}
+
+<link rel="stylesheet"  href="{% static 'personal_profile/graphs/static/blog/style.css' %}">
+
+<title> Blog List</title>
+
+<style>
+	/* Your Style goes here*/
+	/* styling for navigation bar */ 
+	.navbar {
+		overflow:hidden;
+		background-color:lightsalmon;
+		font-family:Arial;
+	}
+	.navbar a {
+		float:left;
+		font-size:16px;
+		color:firebrick;
+		text-align:center;
+		padding: 14px 16px;
+		text-decoration:none;
+	}
+	.dropbtn {
+		background-color: chocolate;
+		color:firebrick;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	}
+	.dropdown {
+		float: left; 
+		overflow:hidden;
+	}
+	/* dropdown button */
+	.dropdown .dropbtn {
+		font-size: 16px;
+		border: none;
+		outline: none;
+		color:firebrick;
+		padding: 14px 16px;
+		background-color:inherit;
+		font-family: inherit;
+		margin: 0;
+	}
+	.navbar a:hover, .dropdown:hover .dropbtn{
+		background-color:slategray;
+	}	
+
+	.dropdown-content{
+		display:none;
+		position:absolute;
+		background-color:wheat;
+		min-width: 190px;
+		box-shadow: 0px 8px 16px 0px rgb(0,0,0,0.2);
+		z-index: 1;
+	}
+	.dropdown-content a{
+		display: block;
+		position: relative;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		color: firebrick;
+		text-align: left;
+		padding: 12px 16px;
+		float: none;
+		text-decoration:none;
+	}
+
+	.dropdown-content a:hover{
+		background-color: tomato;
+	}
+	.dropdown:hover .dropdown-content{
+		display: block;
+	}
+	/* General Styling*/
+	
+	body {
+		background-color:bisque;
+		padding-bottom: 2px;
+		padding-right: 2px;
+		padding-left: 2px;
+		padding-top: 2px; 
+	}
+	
+	h1 {
+		color:coral;
+		text-align: center;
+	}
+
+	h2 {
+		color:coral;
+		text-align: center;
+	}
+
+	p {
+		font-family:'times new roman';
+		font-size:20px;
+		text-indent: 20px;
+	}
+	#menubutton{
+		float:left;
+		border-radius:10px;
+	}
+	.w3-sidebar{
+		height:100%;
+		width:200px;
+		background-color:#fff;
+		position:fixed!important;
+		z-index:1;
+		overflow:auto
+	}
+	.w3-btn,.w3-button{
+		border:none;
+		display:inline-block;
+		padding:8px 16px;
+		vertical-align:middle;
+		overflow:hidden;
+		text-decoration:none;
+		color:inherit;
+		background-color:inherit;
+		text-align:center;
+		cursor:pointer;
+		white-space:nowrap
+	}
+	.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+	.w3-xlarge{font-size:24px!important}
+	.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
+	.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}
+	.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+	.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+	.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
+
+	</style>
+	<script>
+		/* Your JavaScript goes here */
+		function w3_open() {
+  			document.getElementById("mySidebar").style.display = "block";
+		}
+
+		function w3_close() {
+  			document.getElementById("mySidebar").style.display = "none";
+		}
+	</script>
+	<body>
+		  <!-- Sidebar -->
+		<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+			<button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+			<a href="http://localhost:8000/maps/" class="w3-bar-item w3-button">Maps</a>
+			<a href="#" class="w3-bar-item w3-button">Link 2</a>
+			<a href="#" class="w3-bar-item w3-button">Link 3</a>
+		</div>
+		<div class="navbar">
+			<button class="w3-button w3-teal w3-xlarge" id="menubutton" onclick="w3_open()">☰</button>
+			<a href="http://localhost:8000/posts">Home</a>
+			<div class="dropdown">
+				<button class="dropbtn">Interests
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+					<div id="interest_1" class="interest_list">
+						<a href="http://localhost:8000/posts/1">Post 1</a>
+					</div>
+					<div id="interest_2" class="interest_list">
+						<a href="http://localhost:8000/posts/2">Post 2</a>
+					</div>
+					<div id="interest_3" class="interest_list">
+						<a href="http://localhost:8000/posts/3">Post 3</a>
+					</div>
+				</div>
+			</div>
+		</div>
+<h1>Our {{blog_detail.title}} blog detail</h1>
+{{blog_detail.content}}
